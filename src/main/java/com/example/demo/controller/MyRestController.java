@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyRestController {
 
     @Autowired
-    MQOutputChannel outputChannel;
+    private MQOutputChannel outputChannel;
 
+//    @Transactional
     @GetMapping("/send-message")
     public String sendMessage() {
         String message = "hello";
-        outputChannel.get().send(MessageBuilder.withPayload(message).build());
+        outputChannel.get().send(MessageBuilder.withPayload(message)
+                .setHeader("routing-key", "my-routing-key")
+                .build());
         return message;
     }
 
