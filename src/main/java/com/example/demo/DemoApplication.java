@@ -10,9 +10,4 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-//    @StreamListener(target = "mqci-abc")
-//    public void handleMessage(Object object) {
-//        System.out.println(String.format("DEBUG: MESSAGE RECEIVED %s", object));
-//    }
-
 }

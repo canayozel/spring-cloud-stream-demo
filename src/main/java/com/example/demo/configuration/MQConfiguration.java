@@ -1,7 +1,6 @@
 package com.example.demo.configuration;
 
 import org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.cloud.stream.config.ListenerContainerCustomizer;
 import org.springframework.cloud.stream.config.MessageSourceCustomizer;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.amqp.inbound.AmqpMessageSource;
 
 @Configuration
-@ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
 public class MQConfiguration {
 
     @Bean
